@@ -8,5 +8,11 @@ public class main{
     return true;
     }
     public static void main(){
-}
+        String str="Jitendra";
+        if(isPalindrome(str)==true){
+            System.out.println("Word is palindrome");
+        }else{
+            System.out.println("Word is not palindrome");
+        }
+    }
 }
