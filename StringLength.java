@@ -1,7 +1,9 @@
 public class Main {
-    public int lengthCal(String str){
-}
+    public static int lengthCal(String str){
+        return str.length();
+    }
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        String str=new String("Hello World");
+        System.out.println("String length is:- " + lengthCal(str));
     }
 }
