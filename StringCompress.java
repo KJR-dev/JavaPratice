@@ -4,7 +4,7 @@ public class StringCompress{
         for(int i=0;i<str.length();i++){
             char ch=str.charAt(i);
             int count=1;
-            while (i < str.length() - 1 && ch == str.charAt(i + 1)) {
+            while (i < str.length()-1 && ch == str.charAt(i + 1)) {
                 count++;
                 i++;
             }
@@ -15,7 +15,7 @@ public class StringCompress{
     }
 
     public static void main(String[] args){
-        String str="aaabbcccdd";
+        String str="aaabbcccdde";
         System.out.println(stringCompress(str));
     }
 }
