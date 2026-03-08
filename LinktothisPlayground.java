@@ -1,17 +1,19 @@
 public class Main {
-    public static void subArray(int numbers[]){
+    public static void maxSubArrayBruteForce(int numbers[]){
+        int maxSum=0;
         for(int i=0;i<numbers.length;i++){
             for(int j=0;j<numbers.length;j++){
+                int sum=0;
                 for(int k=i;k<=j;k++){
-                    System.out.print(numbers[k]+" ");
+                    sum+=numbers[k];
                 }
-                System.out.println();
+                maxSum=Math.max(maxSum,sum);
             }
-            System.out.println();
         }
+        System.out.println(maxSum);
     }
     public static void main(String[] args) {
-        int numbers[]={2,4,6,8,10};
-        subArray(numbers);
+        int numbers[]={1,-2,6,-1,3};
+        maxSubArrayBruteForce(numbers);
     }
 }
