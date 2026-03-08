@@ -1,22 +1,24 @@
 public class Bubble{
-    public static void bubbleSort(int numbers[]){
+    public static void selectionSort(int numbers[]){
         for(int i=0;i<numbers.length;i++){
-            for(int j=i;i<numbers.length-i;j++){
+            int minPos=-1;
+            for(int j=i+1;j<numbers.length;j++){
                 if(numbers[i]>numbers[j]){
-                    int temp=numbers[i];
-                    numbers[i]=numbers[j];
-                    numbers[j]=temp;
+                    minPos=j;
                 }
+            }
+            if(minPos>0){
+                int temp=numbers[i];
+                numbers[i]=numbers[m];
+                numbers[j]=temp;
             }
         }
     }
     public static void main(String[] args){
         int numbers[]={3,2,5,3,6,8,9};
-        bubbleSort(numbers);
+        selectionSort(numbers);
         for(int i=0;i<numbers.length;i++){
             System.out.print(numbers[i]);
         }
     }
 }
-
-// 3 -> 
