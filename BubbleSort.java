@@ -1,24 +1,22 @@
-import java.util.*;
-public class Main {
-    public static int buySell(int numbers[]){
-        int maxProfit=Integer.MIN_VALUE;
-        int buy=numbers[0];
-        for(int i=1;i<numbers.length;i++){
-            int currProfit=0;
-            if(buy>numbers[i]){
-                buy=numbers[i];
-            }else{
-                currProfit=numbers[i]-buy;
-                maxProfit=Math.max(currProfit,maxProfit);
+public class Bubble{
+    public static void bubbleSort(int numbers[]){
+        for(int i=0;i<numbers.length;i++){
+            for(int j=i;i<numbers.length-i;j++){
+                if(numbers[i]>numbers[j]){
+                    int temp=numbers[i];
+                    numbers[i]=numbers[j];
+                    numbers[j]=temp;
+                }
             }
         }
-        return maxProfit;
     }
-    public static void main(String[] args) {
-        int numbers[]={7,1,5,3,6,4};
-        System.out.println(buySell(numbers));
+    public static void main(String[] args){
+        int numbers[]={3,2,5,3,6,8,9};
+        bubbleSort(numbers);
+        for(int i=0;i<numbers.length;i++){
+            System.out.print(numbers[i]);
+        }
     }
 }
 
-// 7 1 5 3 6 4
-// 
+// 3 -> 
