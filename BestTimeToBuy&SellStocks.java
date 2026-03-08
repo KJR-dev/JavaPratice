@@ -1,30 +1,24 @@
 import java.util.*;
 public class Main {
-    public static int trapRainWater(int numbers[]){
-        int leftMaxBoundary[]=new int[numbers.length];
-        leftMaxBoundary[0]=numbers[0];
-        for(int i=1;i<leftMaxBoundary.length;i++){
-            leftMaxBoundary[i]=Math.max(leftMaxBoundary[i-1],numbers[i]);
+    public static int buySell(int numbers[]){
+        int maxProfit=Integer.MIN_VALUE;
+        int buy=numbers[0];
+        for(int i=1;i<numbers.length;i++){
+            int currProfit=0;
+            if(buy>numbers[i]){
+                buy=numbers[i];
+            }else{
+                currProfit=numbers[i]-buy;
+                maxProfit=Math.max(currProfit,maxProfit);
+            }
         }
-        
-        int rightMaxBoundary[]=new int[numbers.length];
-        rightMaxBoundary[rightMaxBoundary.length-1]=numbers[numbers.length-1];
-        for(int i=rightMaxBoundary.length-2;i>=0;i--){
-            rightMaxBoundary[i]=Math.max(rightMaxBoundary[i+1],numbers[i]);
-        }
-
-        int trappedWater=0;
-        for(int i=1;i<numbers.length-1;i++){
-            int minHeight=Math.min(leftMaxBoundary[i],rightMaxBoundary[i]);
-            trappedWater+=minHeight-numbers[i];
-        }
-        return trappedWater;
+        return maxProfit;
     }
     public static void main(String[] args) {
-        int numbers[]={4,2,0,6,3,2,5};
-        System.out.println(trapRainWater(numbers));
+        int numbers[]={7,1,5,3,6,4};
+        System.out.println(buySell(numbers));
     }
 }
 
-// 4 2 0 6 3 2 5
+// 7 1 5 3 6 4
 // 
