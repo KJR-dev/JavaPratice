@@ -1,4 +1,3 @@
-// "static void main" must be defined in a public class.
 public class Main {
     public static void subArray(int numbers[]){
         int preArray[]=new int[numbers.length];
