@@ -1,4 +1,4 @@
-public class Bubble{
+public class Selection{
     public static void selectionSort(int numbers[]){
         for(int i=0;i<numbers.length;i++){
             int minPos=-1;
@@ -9,8 +9,8 @@ public class Bubble{
             }
             if(minPos>0){
                 int temp=numbers[i];
-                numbers[i]=numbers[m];
-                numbers[j]=temp;
+                numbers[i]=numbers[minPos];
+                numbers[minPos]=temp;
             }
         }
     }
